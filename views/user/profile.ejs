@@ -1,0 +1,30 @@
+<%- include("../partials/header")%>
+<%- include("../partials/navbar")%>
+
+
+<div class="profile-card">
+    <div class="wrapper">
+        <div class="img-area">
+            <div class="inner-area">
+                <img src="/uploads/profile_images/<%= currentUser.profile%>">
+            </div>
+        </div>
+        <div class="user-info text-center mt-2 ">
+            <h3 class="text-capitalize"><%= currentUser.username%></h3>
+            <p><%= currentUser.email%></p>
+            <p class="text-capitalize"><%= currentUser.role%></p>
+        </div>
+        <div class="edit-info">
+            <button class="btn btn-primary">Edit</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<%- include("../partials/footer")%>

@@ -1,0 +1,23 @@
+<%- include("../partials/header")%>
+<%- include("../partials/navbar")%>
+    <main class="container my-3" style="margin-top: 5rem;">
+        <%- include("../partials/flash")%>
+        <section id="heading"> 
+            <h6 class="display-6 " style="color: #293241;"><i class="fab fa-shopify" style="margin-right: 20px; color:#219ebc ;"></i>All Products</h6>
+        </section>
+        <div class="row products" >
+            <%for(let product of products){%>
+                <div class="col-lg-3 col-md-6 col-sm-6 mt-4">
+                    <div class="card-product m-3 text-center ">
+                        <img src="/uploads/product_images/<%=product.image%>" class="card-img-top"  style="height: 210px; padding: 10px; border-radius: 15px;">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= product.name%></h5>
+                          <p class="card-text"><%= product.desc.substring(0,60)%></p>
+                          <a href="/products/<%=product._id%>" class="btn info" style="background-color:#fcca46;">More Info</a>
+                        </div>
+                    </div>
+                </div>
+            <%}%>
+        </div>
+    </main>
+<%- include("../partials/footer")%>

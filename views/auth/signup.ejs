@@ -1,0 +1,39 @@
+<%- include("../partials/header")%>
+<%- include("../partials/navbar")%>
+
+<div class="container" style="margin-top:1.4rem;width:75vw">
+    
+    <form action="/register" method="POST" enctype="multipart/form-data" class="validated-form" novalidate>
+        <%- include("../partials/flash")%>
+        <h4 class="display-4 my-3">Sign Up Here</h4>
+        <div class="mb-3">
+          <label for="username" class="form-label">User Name</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Enter the username" required >   
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email" required >
+        </div>
+        <div class="mb-3">
+            <p>Select User Role</p>
+            <input type="radio"  id="retailer" name="role" value="retailer" >
+            <label for="retailer" class="form-label m-2">Retailer</label>
+            <input type="radio"  id="consumer" name="role" value="consumer">
+            <label for="consumer" class="form-label">Consumer</label>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter the Password" required >
+        </div>
+        <div class="mb-3">
+          <label for="profile" class="form-label">Upload User Profile Image</label>
+          <input type="file" class="form-control-file" id="profile" name="profile" required>
+        </div>
+        
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+<%- include("../partials/footer")%>
