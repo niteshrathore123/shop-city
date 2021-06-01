@@ -1,3 +1,4 @@
+
 const express=require('express');
 const app=express();
 const path=require('path');
@@ -8,11 +9,17 @@ const session=require('express-session');
 const passport=require('passport');
 const localStrategy=require('passport-local');
 const User=require('./model/user');
+const cors=require('cors');
+const bodyParser = require("body-parser");
+
+
+
 
 //Routes
 const productRoutes=require('./route/product');
 const authRoutes=require('./route/auth');
 const cartRoutes=require('./route/cart');
+const paymentRoutes=require('./route/payment');
 
 
 
@@ -22,6 +29,9 @@ app.set('views',path.join(__dirname,'/views'));
 app.use(express.static(path.join(__dirname,'/public')));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.json());
 
 
 
@@ -74,6 +84,7 @@ mongoose.connect('mongodb://localhost:27017/shopApp',
 app.use(productRoutes);
 app.use(authRoutes);
 app.use(cartRoutes);
+app.use(paymentRoutes);
 
 
 app.get('/',(req,res)=>{

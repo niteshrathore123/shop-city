@@ -45,7 +45,8 @@ router.post('/products',upload.single('image'),async(req,res)=>{
         name:req.body.name,
         image:req.file.filename,
         price:req.body.price,
-        desc:req.body.desc
+        desc:req.body.desc,
+        
     });
     try{
         product=await product.save();

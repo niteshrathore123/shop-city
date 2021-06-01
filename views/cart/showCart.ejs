@@ -1,22 +1,21 @@
 <%- include("../partials/header")%>
 <%- include("../partials/navbar")%>
 
-<div class="cart-container" style="margin-top: 2rem;">
+<section class="cart-container">
     <%- include("../partials/flash")%>
     <h6 class="display-6">Cart(<%= currentUser.cart.length%> Items)</h6>
     <div class="row mt-3">
         <div class="col-lg-8">
-      
         <%for(let item of userCart){%>
-              <div class="card-cart mb-3" style="width: 90%;">
+              <div class="card-cart my-4" style="width: 90%;">
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img style="width: 200px;" src="/uploads/product_images/<%=item.image%>" >
                   </div>
                   <div class="col-md-8">
                     <div class="card-body-cart">
-                      <h5 class="card-title"><%=item.name%></h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>  
+                      <h4 class="card-title mb-3"><%=item.name%></h4>
+                      <h5 class="card-text mb-3">&#8377; <%=item.price%></h5>  
                       <form action="/user/<%= currentUser._id%>/cart/<%= item._id%>?_method=DELETE" method="POST">
                         <button class="btn btn-sm btn-danger">remove</button>
                       </form>
@@ -26,25 +25,36 @@
               </div>
             <%}%>    
         </div>
-
-        <!-----------------------Cart Total----------------------------->
         <div class="col-lg-4 mb-3">
-            <%totalAmount=0%>
-            <h6 class="display-6">Products list</h6>
-            <ul class="list-group">
-              <%for(let item of userCart){%>
-                  <li class="list-group-item"><%= item.name%> - <strong>&#8377;<%= item.price%></strong></li>
-                  <%totalAmount+=item.price%>
-              <%}%> 
-            </ul>
-            <div mt-2>
-              <p class="fw-bold">Total : &#8377;<%=totalAmount%> </p>
-              <a href="#" class="btn btn-success">Proceed To Pay</a>
-            </div> 
+          <%totalAmount=0%>
+          <h6 class="display-6">Products</h6>
+          <ul class="list-group">
+            <%for(let item of userCart){%>
+              <li class="list-group-item"><%=item.name%> - <strong>&#8377; <%=item.price%></strong></li>
+              <%totalAmount+=item.price%>
+            <%}%>
+            
+          </ul>
+
+          <div class="my-2">
+            <p class="fw-bold">Total Amount :  &#8377; <%=totalAmount%></p>
+          </div>
+          <a href="/payments" class="btn btn-success">Proceed To Pay</a>
         </div>
-        
+    
     </div>
-</div>
+        
+    
+</section>
+
+
+
+
+
+
+
+
+
 
 
 <%- include("../partials/footer")%>

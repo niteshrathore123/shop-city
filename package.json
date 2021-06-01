@@ -1,9 +1,13 @@
 {
   "dependencies": {
     "@admin-bro/express": "^3.1.0",
-    "admin-bro": "^4.0.1",
+    "admin-bro": "^3.2.5",
     "admin-bro-expressjs": "^2.1.1",
+    "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
@@ -16,6 +20,7 @@
     "passport-google-oauth2": "^0.2.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0",
+    "razorpay": "^2.0.6",
     "session": "^0.1.0"
   },
   "name": "shop-city",

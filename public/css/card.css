@@ -169,6 +169,49 @@ body{
   color: #31344b;
 }
 
+/*Login*/
+.login-container{
+  max-width: 35rem;
+  border-radius: 10px;
+  margin: 30px auto;
+  margin-top: 80px;
+  padding: 20px;
+  background-color: #fdfffc;
+  box-shadow:0px 10px 1px #ddd, 0 10px 20px #ccc;;
+}
+
+.form-container{
+  width: 30rem;
+  margin: 20px auto;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;  
+  
+}
+.form-container input[type=text],input[type=email],input[type=password]{
+  width: 15rem;
+  border-radius: 20px;
+  display: block;
+  border:none;
+  box-shadow: 1px 3px 5px 3px rgba(0, 0.1, 0.1, 0.1);
+}
+.login-btn,.signup-btn{
+  width: 15rem;
+}
+
+/*Cart-items*/
+.cart-container{
+  
+  padding: 20px;
+}
+.quantity{
+  width: 50px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+
+
 
 @media (max-width: 375px) {
   .card-product{

@@ -4,16 +4,32 @@
 .item-center{
     align-items: center;
 }
+/*product Collection*/
+.collection-item img{
+    height: 18rem;
+}
+.product-collection h6{
+    font-weight: 400;
+}
+
 
 
 /*About us section*/
-.container{
-    margin: 10px auto;
+.about-us{
+    background-color: whitesmoke;
+    width: 100%;
+}
+.about-us-container{
+   
+    align-items: center;
+    text-align: center;
+
 }
 .services-row{
     align-items: center;
     text-align: center;
     justify-content: space-between;
+    padding: 3rem 0rem 0rem 3rem;
 
 }
 
@@ -26,13 +42,13 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0px 5px 30px 5px rgba(0,0,0,0.1);
-   
+    margin: 0px 20px 20px 0px;
     transition:all 0.5sec;
 }
 .services-col >i{
     font-size: 2.1rem;
     margin-bottom:10px;
-    color: lightblue;
+    color: #118ab2;
 }
 .services-col >h4{
     font-size: 20px;
@@ -48,22 +64,18 @@
 
 /*Brand Section*/
 .brand-section{
-    background-color: lightgrey;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    background-color: #b7b7a4;
+
     justify-content: space-between;
     align-items: center;
     padding: 2rem 0rem 0rem 2rem;
-    
 }
-.brand-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 80%;
-    margin-top: 2rem;
+.brand-section h2,p{
+    text-align: center;
 }
-.brand-container >img{
-    width: 200px;
+
+.brand-container img{
+    width: 180px;
 }
+
+

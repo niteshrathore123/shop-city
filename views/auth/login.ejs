@@ -1,25 +1,26 @@
 <%- include("../partials/header")%>
 <%- include("../partials/navbar")%>
-
-<div class="container" style="margin-top:1.4rem;width:75vw" >
+<%- include("../partials/flash")%>
+<section class="login-container">
+    <div class="form-container">
+        
+        <form action="/login" method="POST" class="validated-form" novalidate>
+            
+            <h4 class="display-4 my-3" style="color: #1d3557;">Login Here</h4>
+            <div class="mb-3">
+              <label for="username" class="form-label">User Name</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter the username" required>   
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter the Password" required>
+            </div>
+            <button  type="submit" class="login-btn btn btn-primary">Login</button>
+            <div class="mt-3">
+                <a href="/register">Create an account?Signup Here</a>
+            </div>
+        </form>
+    </div>
     
-    <form action="/login" method="POST" class="validated-form" novalidate>
-        <%- include("../partials/flash")%>
-        <h4 class="display-4 my-3">Login Here</h4>
-        <div class="mb-3">
-          <label for="username" class="form-label">User Name</label>
-          <input type="text" class="form-control" id="username" name="username" placeholder="Enter the username" required >   
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter the Password" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-        <div class="mt-3">
-            <a href="/register">Create an account?Signup Here</a>
-        </div>
-    </form>
-</div>
+</section>
 
-
-<%- include("../partials/footer")%>

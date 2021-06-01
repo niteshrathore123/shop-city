@@ -14,15 +14,10 @@
             <h2><%= product.name%></h4>
             <h5 ><strong>&#8377;<%= product.price%></strong></h5>
             <p><%= product.desc%></p>
-            <div class="counter">
-                <label>Quantity</label>
-                <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                <input type="text" value="1" name="quantity" id="quantity">
-                <span class="up" onClick='increaseCount(event, this)'>+</span>
-            </div>   
+              
         </div>
 
-        <div class="container-fluid buttons mt-5">
+        <div class="container-fluid buttons my-5">
             <%if(!currentUser){%>
                 <a href="#" class="add-cart btn btn-dark">add to cart</a>
                 <a href="#" class="buy-now btn">Buy Now</a>
@@ -34,7 +29,7 @@
                     </form>
                     
                 <%}else{%>
-                    <form action="/user/<%= product._id%>/cart" method="POST">
+                    <form action="/user/<%= product._id%>/cart" method="POST" >
                         <button class="add-cart btn btn-dark">Add To Cart</button>
                     </form>
                     
