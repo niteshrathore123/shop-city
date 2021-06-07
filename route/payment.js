@@ -13,9 +13,14 @@ var instance = new Razorpay({
 });
 
 
-router.get("/payments",(req, res) => {
-    res.render("products/payment", { key: process.env.KEY_ID });
-});
+router.post("/payments",(req,res)=>{
+    const{amt}=req.body;
+    console.log("/paymets par amount mil gya 0+"+amt);
+    res.render("products/payment", { key: process.env.KEY_ID , amount:amt});
+})
+// router.get("/payments",(req, res) => {
+//     res.render("products/payment", { key: process.env.KEY_ID });
+// });
 router.post("/api/payment/order", (req, res) => {
     params = req.body;
     instance.orders
@@ -41,6 +46,8 @@ router.post("/api/payment/verify", (req, res) => {
     if (expectedSignature === req.body.razorpay_signature)
         response = { status: "success" };
     res.send(response);
+    res.redirect('/user/:userId/cart');
+    
 });
 
 

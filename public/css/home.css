@@ -1,81 +1,139 @@
+:root {
+    --primary: #ff4545;
+    --white: #fff;
+    --black: #222;
+    --grey1: #3a3b3c;
+    --grey2: #828282;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+.container {
+    max-width: 114rem;
+    margin: 0 auto;
+}
+li {
+    list-style: none;
+}
+/*Carousel*/
 .carousel-item{
     padding: 5px;
 }
 .item-center{
     align-items: center;
 }
-/*product Collection*/
-.collection-item img{
-    height: 18rem;
+
+/*Product Collections*/
+.section {
+    padding: 5rem 0 5rem 0;
 }
-.product-collection h6{
+  
+.section .title {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section .title h2 {
+    font-size: 3rem;
     font-weight: 400;
+    margin-bottom: 1.5rem;
 }
 
 
 
-/*About us section*/
-.about-us{
-    background-color: whitesmoke;
+.promotion-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.promotion-item {
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.promotion-item img {
+    object-fit: cover;
+    height: 100%;
     width: 100%;
+    transition: all 500ms ease-in-out;
 }
-.about-us-container{
-   
-    align-items: center;
+
+.promotion-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
     text-align: center;
-
+    z-index: 3;
 }
-.services-row{
+
+.promotion-content h3 {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5rem;
+    padding: 0.7rem 1.4rem;
+    font-size: 1.7rem;
+    font-weight: inherit;
+    margin-bottom: 1rem;
+    transition: all 300ms ease-in-out;
+}
+
+.promotion-item:hover .promotion-content h3 {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.promotion-item:hover img {
+    transform: scale(1.2);
+}
+
+.promotion-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 500ms ease-in-out;
+}
+
+.promotion-item:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+    .promotion-content h3 {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5rem;
+    padding: 0.7rem 1.4rem;
+    font-size: 1.6rem;
+}
+}
+
+@media only screen and (max-width: 996px) {
+    .promotion-layout {
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media only screen and (max-width: 768px) {
+    .promotion-layout {
+    grid-template-columns: 1fr;
+    }
+}
+
+/*brands*/
+
+.brand-layout{
     align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    padding: 3rem 0rem 0rem 3rem;
-
-}
-
-.services-col{
-    border-radius: 10px;
-    height: 12rem;
-    width: 14rem;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    box-shadow: 0px 5px 30px 5px rgba(0,0,0,0.1);
-    margin: 0px 20px 20px 0px;
-    transition:all 0.5sec;
 }
-.services-col >i{
-    font-size: 2.1rem;
-    margin-bottom:10px;
-    color: #118ab2;
-}
-.services-col >h4{
-    font-size: 20px;
-}
-.services-col:hover{
-    background-color: lightblue;
-    color: white;
-}
-.services-col:hover >i{
-    color: white;
-}
-
-
-/*Brand Section*/
-.brand-section{
-    background-color: #b7b7a4;
-
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 0rem 0rem 2rem;
-}
-.brand-section h2,p{
-    text-align: center;
-}
-
-.brand-container img{
-    width: 180px;
-}
-
-

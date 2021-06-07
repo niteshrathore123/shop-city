@@ -39,7 +39,10 @@
           <div class="my-2">
             <p class="fw-bold">Total Amount :  &#8377; <%=totalAmount%></p>
           </div>
-          <a href="/payments" class="btn btn-success">Proceed To Pay</a>
+          <form action="/payments" method ="post">
+            <input type="text" class="disabled-input" id="amt" name="amt" value="<%=totalAmount%>">
+            <button class="btn btn-success">Proceed to Pay</button>
+          </form>
         </div>
     
     </div>

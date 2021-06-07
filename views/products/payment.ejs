@@ -1,8 +1,11 @@
 <%- include("../partials/header")%>
 <%- include("../partials/navbar")%>
+<%- include("../partials/flash")%>
+
+
 
 <label for="">Amount: </label>
-<input type="text" id="order-amt">
+<input type="text" name="order-amt" id="order-amt" value="<%=amount%>">
 <br>
 <!-- Get order id from razorpay -->
 <button id="order-button1">Create Order</button>
